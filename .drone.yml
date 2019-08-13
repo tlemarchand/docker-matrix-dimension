@@ -18,7 +18,7 @@ steps:
     target: app
     tags:
       - latest
-      - build-$DRONE_BUILD_NUMBER
+      - build-${DRONE_BUILD_NUMBER}
     username:
       from_secret: docker_username
     password:

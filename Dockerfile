@@ -1,8 +1,5 @@
 FROM node:10.16-buster as builder
 
-RUN apt-get update && \
-    apt-get install -y gcc python make g++ sqlite
-
 COPY matrix-dimension/ /home/node/matrix-dimension
 
 RUN chown -R node:node /home/node/matrix-dimension

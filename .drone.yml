@@ -8,7 +8,7 @@ steps:
 - name: submodules
   image: docker:git
   commands:
-  - git submodule update --recursive --remote
+  - git submodule update --recursive --remote --init
   - git submodule foreach git pull origin master
 
 - name: docker  

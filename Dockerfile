@@ -22,4 +22,7 @@ COPY --from=builder /home/node/matrix-dimension /opt/matrix-dimension
 VOLUME ["/var/lib/matrix-dimension"]
 
 EXPOSE 8184
+
+WORKDIR /opt/matrix-dimension
+
 CMD ["node","/opt/matrix-dimension/build/app/index.js"]

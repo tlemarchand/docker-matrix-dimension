@@ -11,7 +11,7 @@ steps:
   - git submodule update --recursive --remote --init
   - git submodule foreach git pull origin master
 
-- name: docker  
+- name: docker-matrix-dimension
   image: plugins/docker
   settings:
     repo: tlemarchand/matrix-dimension
@@ -23,3 +23,16 @@ steps:
       from_secret: docker_username
     password:
       from_secret: docker_password
+
+- name: docker-matrix-dimension
+  image: plugins/docker
+  settings:
+    repo: quay.io/tlemarchand/matrix-dimension
+    target: app
+    tags:
+      - latest
+      - build-${DRONE_BUILD_NUMBER}
+    username:
+      from_secret: quay_username
+    password:
+      from_secret: quay_password

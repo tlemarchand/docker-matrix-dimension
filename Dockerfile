@@ -1,4 +1,4 @@
-FROM node:10.16-buster as builder
+FROM node:10-buster as builder
 
 COPY matrix-dimension/ /home/node/matrix-dimension
 
@@ -11,7 +11,7 @@ RUN cd /home/node/matrix-dimension && \
     NODE_ENV=production npm run-script build:web && npm run-script build:app 
 
 
-FROM node:10.16-buster-slim as app
+FROM node:10-buster-slim as app
 
 ENV NODE_ENV=production
 

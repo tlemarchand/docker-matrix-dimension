@@ -24,7 +24,7 @@ steps:
     password:
       from_secret: docker_password
 
-- name: docker-matrix-dimension
+- name: quay-matrix-dimension
   image: plugins/docker
   settings:
     repo: quay.io/tlemarchand/matrix-dimension

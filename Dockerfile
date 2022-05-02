@@ -8,7 +8,7 @@ USER node
 
 RUN cd /home/node/matrix-dimension && \
     npm install -D wd rimraf webpack webpack-command sqlite3 && \
-    NODE_ENV=production npm run-script build:web && npm run-script build:app 
+    NODE_ENV=production npm run-script build
 
 
 FROM node:14-bullseye-slim as app
